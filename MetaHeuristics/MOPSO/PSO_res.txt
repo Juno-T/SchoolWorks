@@ -1,0 +1,61 @@
+# no fitness definition given (to be use for identifying personal best) -> self defined f1+f2
+# no heuristic for choosing global best (best within each sigma region) -> use fitness
+# For evaluation, visualization together with Sigmas range as a numerical evaluation is being used.
+
+MOPSO prob 1
+  N2 -30,30
+  Min, Max sigmas =  -0.9999999478062152 0.9981872089226718
+  Sigmas range =  1.998187156728887
+
+  N3 -30,30
+  Min, Max sigmas =  -0.9999999977403923 0.943233725059351
+  Sigmas range =  1.9432337227997434
+
+  N3 -30,30 ; Fitness+sigma/20 ; 12 bins      // add sigma to fitness might help distribution for problem with concave up pareto front 
+  Min, Max sigmas =  -0.9999999989174305 0.9548376339676052
+  Sigmas range =  1.9548376328850359
+
+  N3 (randGb) 6 bins
+  Min, Max sigmas =  -1.0 0.9999999959245192
+  Sigmas range =  1.9999999959245192
+
+  N3 randGn 12 bins
+  Min, Max sigmas =  -1.0 0.9999999999922596
+  Sigmas range =  1.9999999999922595
+
+  N3 -1,1
+  Min, Max sigmas =  -0.9998637607816535 0.5229960836126653
+  Sigmas range =  1.5228598443943189
+
+  N10 -30,30
+  Min, Max sigmas =  -0.9999790705887706 -0.9773446626798264
+  Sigmas range =  0.02263440790894411
+
+MOPSO prob2 alpha = 2
+
+  N3 both bins
+  Min, Max sigmas =  -0.9999990000010001 0.5624509151960194
+  Sigmas range =  1.5624499151970195
+
+  N3 (randGb) 6bins
+  Min, Max sigmas =  -0.9999990000010001 0.9999990000010001
+  Sigmas range =  1.9999980000020001
+
+  N3 (randGb) 12bins
+  Min, Max sigmas =  -0.9999990000010001 0.9999990000010001 
+  Sigmas range =  1.9999980000020001 // used 6 decimal place so its beyond tolerant error. just see the plot instead
+
+
+
+MOPSO prob3 alpha = 0.5
+  N3
+  Min, Max sigmas =  -0.9300029649933564 0.9505220268463995
+  Sigmas range =  1.880524991839756
+
+  N3 12bins
+  Min, Max sigmas =  -0.9900002326256986 0.9505220268463995
+  Sigmas range =  1.940522259472098
+  
+  N3 (randGb) both bins
+  Min, Max sigmas =  -0.9999990012441091 0.9999990000010001
+  Sigmas range =  1.999998001245109
